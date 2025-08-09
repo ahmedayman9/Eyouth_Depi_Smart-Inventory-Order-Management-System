@@ -60,4 +60,9 @@ class inventory():
         for i in self.items:
             print(f"product {i} profit ={self.items[i][1]*self.items[i][2]*0.25}")
             print("------------------------------------")
+    def buy_product(self,product,quantiy):
+        self.product=product
+        self.quantity=quantiy
+        self.items[self.product][2]-=self.quantity            
             
+
