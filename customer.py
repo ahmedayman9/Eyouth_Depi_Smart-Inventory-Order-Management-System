@@ -1,16 +1,17 @@
 import csv
-from Inventory import Inventory
+from inventory import Inventory
 
 class Customer:
-    def __init__(self, name, age, phone_number, customer_id):
+    def __init__(self, name, age, phone_number, customer_id , month):
         self.name = name
         self.age = age
         self.phone_number = phone_number
         self.customer_id = customer_id
         self.inventory = Inventory()
+        self.month = month
 
     def sell_product(self, product_name, filename="customer.csv"):
-        self.inventory.buy(product_name)
+        self.inventory.deleteproduct(product_name)
         price = self.inventory.price_of_item(product_name)
         profit = self.inventory.profit_of_item(product_name)
 
@@ -24,14 +25,9 @@ class Customer:
 
                 file.seek(0)
                 if file.tell() == 0:
-                    writer.writerow([
-                        "Name", "Age", "PhoneNumber", "CustomerID",
-                        "Product", "Price", "Profit"
-                    ])
-
-                writer.writerow([
-                    self.name, self.age, self.phone_number, self.customer_id,
-                    product_name, price, profit
+                   writer.writerow([
+                      self.customer_id, self.name, self.age,  self.phone_number,
+                    product_name , self.month
                 ])
             print("Sale saved successfully.")
         except IOError as e:
