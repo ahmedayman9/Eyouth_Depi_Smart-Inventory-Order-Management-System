@@ -1,3 +1,6 @@
+import csv
+import os
+
 from Inventory.stock import Stock
 from UserCustomer.customer import Customer
 
@@ -6,31 +9,58 @@ def customer_interface(stock):
     for product in stock.products:
         print(f"ID: {product.product_id} | Name: {product.name} | Price: ${product.price} | Quantity: {product.quantity}")
 
-    # Customer details
+    # Customer info (entered once)
     name = input("\nEnter your name: ")
     try:
         age = int(input("Enter your age: "))
         phone = input("Enter your phone number: ")
-
         customer = Customer(name, age, phone)
 
-        product_id = int(input("\nEnter the ID of the product you want to buy: "))
-        amount = int(input("Enter the quantity: "))
+        purchases = []  # List to hold multiple purchases
 
-        for product in stock.products:
-            if product.product_id == product_id:
-                if stock.sell_product(product_id, amount):
-                    customer.product_id = product.product_id
-                    customer.product_name = product.name
-                    customer.price = product.price * amount
-                    print(f"\n{customer.name} bought {amount}x {product.name}")
-                else:
-                    print("❌ Purchase failed due to insufficient stock.")
+        while True:
+            print("\n🛒 New Item")
+            product_id = int(input("Enter the product ID to buy (or 0 to finish): "))
+            if product_id == 0:
                 break
-        else:
-            print("❌ Product ID not found.")
 
-        customer.display_info()
+            amount = int(input("Enter the quantity: "))
+
+            for product in stock.products:
+                if product.product_id == product_id:
+                    if stock.sell_product(product_id, amount):
+                        # Store purchase details temporarily
+                        purchases.append({
+                            "product_id": product.product_id,
+                            "product_name": product.name,
+                            "price": product.price * amount,
+                            "profit": product.unit_profit * amount,
+                            "quantity": amount
+                        })
+                        print(f"✅ Added {amount}x {product.name} to your cart.")
+                    else:
+                        print("❌ Not enough stock.")
+                    break
+            else:
+                print("❌ Product not found.")
+
+        if purchases:
+            print(f"\n🧾 {customer.name}'s Final Receipt:")
+            total_price = 0
+            total_profit = 0
+            for p in purchases:
+                print(f"- {p['quantity']}x {p['product_name']} = ${p['price']}")
+                total_price += p['price']
+                total_profit += p['profit']
+
+            print(f"Total: ${total_price}")
+            print("Thank you for your purchase!")
+
+            # Save all purchases to CSV
+            save_multiple_purchases_to_csv(customer, purchases)
+
+        else:
+            print("🛑 No purchases made.")
 
     except ValueError:
         print("❌ Invalid input. Please enter numeric values.")
@@ -52,6 +82,34 @@ def owner_interface(stock):
             break
         else:
             print("❌ Invalid choice. Try again.")
+
+def save_multiple_purchases_to_csv(customer, purchase_list, filename="purchases.csv"):
+    import csv
+    import os
+    file_exists = os.path.isfile(filename)
+
+    with open(filename, mode='a', newline='') as file:
+        writer = csv.writer(file)
+
+        if not file_exists:
+            writer.writerow([
+                "Customer Name", "Age", "Phone",
+                "Product ID", "Product Name",
+                "Quantity", "Total Price", "Profit"
+            ])
+
+        for p in purchase_list:
+            writer.writerow([
+                customer.name,
+                customer.age,
+                customer.phone,
+                p["product_id"],
+                p["product_name"],
+                p["quantity"],
+                p["price"],
+                p["profit"]
+            ])
+
 
 # ==== Main loop ====
 def main():
