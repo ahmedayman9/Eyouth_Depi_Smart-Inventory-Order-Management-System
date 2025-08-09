@@ -30,11 +30,48 @@ class Inventory:
         with open(file_name, 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([new_id, product_name, product_price, product_stock, product_category])
+            print("/nproduct added successfully to the inventory ...")
 
-    # def remove_item(self, item_name, quantity):
-    #     if item_name in self.inventory:
+    
+    def show_total_profit(self,file_name=r"C:\Users\DEBI\Desktop\shop_system\Eyouth_Depi_Smart-Inventory-Order-Management-System\data\supermarket_inventory.csv"):
+        with open(file_name, 'r', newline='') as file:
+            reader = csv.reader(file)
+            next(reader)
+            total_profit=0
+            for row in reader:
+                product_price=float(row[2])
+                product_stock=int(row[3])
+                total_profit+=(product_price*product_stock)
+
+            total_profit *= .25
+            print(f"your total profit in  25 percentage is:{total_profit}")
+
+
+    def remove_item(self, item_name,quantity, file_name=r"C:\Users\DEBI\Desktop\shop_system\Eyouth_Depi_Smart-Inventory-Order-Management-System\data\supermarket_inventory.csv"):
+        updated_rows=[]
+        with open(file_name, 'r', newline='') as file:
+            reader = csv.reader(file)
+            next(reader)
+            updated_rows.append(["product_id","product_name","product_price","product_stock","product_category"])
+            for row in reader:
+                if row[1] == item_name:
+                    if int(row[3]) >= quantity:
+                        row[3] = str(int(row[3]) - quantity)
+                        print(f"{quantity} {item_name} removed successfully from the inventory and the current stock is {row[3]}")
+                        updated_rows.append(row)
+                        break
+                    else:
+                        print(f"Sorry, we only have {row[3]} in stock.")
+                updated_rows.append(row)
+        if(updated_rows[1]):
+            with open(file_name, 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerows(updated_rows)
+    
 
 
 inv=Inventory()
 # inv.show_products()
-inv.add_item()
+# inv.add_item()
+# inv.show_total_profit()
+inv.remove_item("meet",10)
