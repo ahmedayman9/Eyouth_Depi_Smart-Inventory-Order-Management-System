@@ -12,7 +12,7 @@ class ProductCls:
 class inventoryCls:
     def __init__(self, products):
         self.products = products
-        self.saveToFile()
+        self.readFromFile()
 
 
     def readFromFile(self):
@@ -24,23 +24,20 @@ class inventoryCls:
     def showProducts(self):
         print("Products in Inventory:")
         print("======================")
-        with open("inventory.csv", "r") as f:
-            for line in f.readlines()[1:]:
-                print(line.strip())
-        print("--------------------------------------------------------")
+        for product in self.products:
+            product.showProduct()
+            print("--------------------------------------------------")
 
     def totalProfit(self):
         totalProfit = 0
-        with open("inventory.csv", "r") as f:
-            for line in f.readlines()[1:]:
-                totalProfit += float(line.split(",")[2])
+        for product in self.products:
+            totalProfit += product.price * product.quantity
         print(f"Total Profit: {totalProfit}")
 
     def netProfit(self):
         netProfit = 0
-        with open("inventory.csv", "r") as f:
-            for line in f.readlines()[1:]:
-                netProfit += float(line.split(",")[2]) * 0.25
+        for product in self.products:
+            netProfit += product.price * product.quantity * 0.25
         print(f"Net Profit: {netProfit}")
 
     def addProduct(self, product):
