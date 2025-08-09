@@ -60,9 +60,17 @@ class inventory():
         for i in self.items:
             print(f"product {i} profit ={self.items[i][1]*self.items[i][2]*0.25}")
             print("------------------------------------")
-    def buy_product(self,product,quantiy):
-        self.product=product
-        self.quantity=quantiy
-        self.items[self.product][2]-=self.quantity            
+    def buy_product(self):
+        while True:
+            x=int(input("enter product id"))
+            y=int(input("enter quantiy you want"))
+            self.items[x][2]-=y
+            sum+=self.items[x][1]*y
+            z=input("you want another items").lower()
+            if z=="no":
+                    print(f"you should pay: {sum}")
+                    break    
+                
             
+
 
