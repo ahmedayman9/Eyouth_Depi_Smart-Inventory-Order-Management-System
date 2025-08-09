@@ -1,8 +1,12 @@
 from Inventory.product import Product
+from BalanceSheet.sheet import SheetManager
+from BalanceSheet.monthly_sheet import MonthlySheet
+from datetime import datetime
 
 class Stock:
-    def __init__(self):
+    def __init__(self, monthly_sheet):
         self.products = []
+        self.monthly_sheet = monthly_sheet
         self._load_initial_products()
 
     def _load_initial_products(self):
@@ -27,8 +31,15 @@ class Stock:
 
     def sell_product(self, product_id, amount):
         """Sell a product by its ID."""
+        current_month = datetime.now().month  # Get current month (1-12)
+        
         for product in self.products:
             if product.product_id == product_id:
+                self.monthly_sheet.add_data(
+                    month=current_month,
+                    gross_profit=product.price * amount,
+                    net_profit=product.unit_profit * amount
+                )
                 return product.sell(amount)
         print("Product not found.")
         return False

@@ -1,6 +1,9 @@
+from BalanceSheet.monthly_sheet import MonthlySheet
+
+
 class SheetManager:
-    def __init__(self, monthly_sheet):
-        self.monthly_sheet = monthly_sheet
+    def __init__(self):
+        self.monthly_sheet = MonthlySheet()
 
     def show_monthly_data(self):
         for month in range(1, 13):

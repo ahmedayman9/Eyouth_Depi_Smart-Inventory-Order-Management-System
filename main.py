@@ -1,8 +1,10 @@
 import csv
 import os
 
+from BalanceSheet.sheet import SheetManager
 from Inventory.stock import Stock
 from UserCustomer.customer import Customer
+from BalanceSheet.monthly_sheet import MonthlySheet
 
 def customer_interface(stock):
     print("\n📦 Available Products for Customers:")
@@ -70,7 +72,8 @@ def owner_interface(stock):
         print("\n👨‍💼 Owner Menu:")
         print("1. Show all product details")
         print("2. Show total net profit")
-        print("3. Return to main menu")
+        print("3. Show monthly report")
+        print("4. Return to main menu")
 
         choice = input("Enter your choice: ")
 
@@ -79,6 +82,8 @@ def owner_interface(stock):
         elif choice == "2":
             stock.show_total_profit()
         elif choice == "3":
+            stock.monthly_sheet.show_monthly_data()
+        elif choice == "4":
             break
         else:
             print("❌ Invalid choice. Try again.")
@@ -113,7 +118,8 @@ def save_multiple_purchases_to_csv(customer, purchase_list, filename="purchases.
 
 # ==== Main loop ====
 def main():
-    stock = Stock()
+    sheet = SheetManager()
+    stock = Stock(sheet.monthly_sheet)
 
     while True:
         print("\n📍 Welcome to the Supermarket System")
