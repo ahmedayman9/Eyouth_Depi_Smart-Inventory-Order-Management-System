@@ -67,7 +67,7 @@ def customer_interface(stock):
     except ValueError:
         print("❌ Invalid input. Please enter numeric values.")
 
-def owner_interface(stock):
+def owner_interface(stock, sheet):
     while True:
         print("\n👨‍💼 Owner Menu:")
         print("1. Show all product details")
@@ -132,7 +132,7 @@ def main():
         if choice == "1":
             customer_interface(stock)
         elif choice == "2":
-            owner_interface(stock)
+            owner_interface(stock, sheet)
         elif choice == "3":
             print("👋 Exiting the system. Goodbye!")
             break
