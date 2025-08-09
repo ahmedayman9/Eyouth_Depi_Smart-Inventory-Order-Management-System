@@ -1,6 +1,10 @@
 # 📌 Smart Inventory & Order Management System
 
 A **Python-based** application to help small businesses **track inventory**, **manage customer orders**, and **generate reports** — with room to add **AI-powered demand prediction** later.
+> 📢 **Project developed as part of the [DEPI](https://depi.gov.eg) Program in collaboration with [Eyouth](https://eyouthlearning.com/)**  
+> Group project for training and practical application of **Object-Oriented Programming (OOP)** concepts.
+
+<p align="left">
 
 <p align="left">
   <a href="https://www.python.org/downloads/"><img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-blue.svg"></a>
