@@ -35,11 +35,23 @@ class Stock:
         
         for product in self.products:
             if product.product_id == product_id:
+                # Calculate profits for this sale
+                sale_gross_profit = product.price * amount
+                sale_net_profit = product.unit_profit * amount
+                
+                # Add to monthly data (this will accumulate with existing data)
                 self.monthly_sheet.add_data(
                     month=current_month,
-                    gross_profit=product.price * amount,
-                    net_profit=product.unit_profit * amount
+                    gross_profit=sale_gross_profit,
+                    net_profit=sale_net_profit
                 )
-                return product.sell(amount)
+                
+                # Process the sale
+                sale_result = product.sell(amount)
+                
+                if sale_result:
+                    self.monthly_sheet.show_current_month_summary(current_month)
+                
+                return sale_result
         print("Product not found.")
         return False

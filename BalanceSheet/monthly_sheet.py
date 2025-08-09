@@ -7,8 +7,29 @@ class MonthlySheet:
         self.add_initial_data()
 
     def add_data(self, month, gross_profit, net_profit):
-        new_data = Data(gross_profit, net_profit)
-        self.data[month] = new_data
+        if month in self.data:
+            # Update existing data by adding to it
+            self.data[month].gross_profit += gross_profit
+            self.data[month].net_profit += net_profit
+        else:
+            # Create new data entry for the month
+            new_data = Data(gross_profit, net_profit)
+            self.data[month] = new_data
+
+    def get_monthly_data(self, month):
+        """Get data for a specific month."""
+        return self.data.get(month, None)
+
+    def show_current_month_summary(self, month):
+        """Show summary for the current month."""
+        if month in self.data:
+            data = self.data[month]
+            print(f"\n--- Month {month} Summary ---")
+            print(f"Gross Profit: ${data.gross_profit}")
+            print(f"Net Profit: ${data.net_profit}")
+        else:
+            print(f"\n--- Month {month} Summary ---")
+            print("No sales data available for this month.")
 
     def add_initial_data(self):
         """Initialize with some data for demonstration."""
