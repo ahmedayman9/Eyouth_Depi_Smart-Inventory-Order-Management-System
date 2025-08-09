@@ -1,56 +1,20 @@
-items = {
-            201: ["milk", 25, 100],
-            202: ["bread", 20, 80],
-            203: ["eggs", 10, 200],
-            204: ["butter", 50, 60],
-            205: ["cheese", 70, 40],
-            206: ["sugar", 30, 100],
-            207: ["salt", 15, 150],
-            208: ["rice", 40, 120],
-            209: ["flour", 35, 90],
-            210: ["oil", 100, 50],
-            211: ["soap", 25, 110],
-            212: ["shampoo", 75, 45],
-            213: ["toothpaste", 40, 70],
-            214: ["brush", 15, 100],
-            215: ["detergent", 90, 55],
-            216: ["tea", 45, 85],
-            217: ["coffee", 60, 65],
-            218: ["biscuits", 20, 150],
-            219: ["chocolate", 35, 95],
-            220: ["noodles", 30, 130],
-            221: ["juice", 50, 70],
-            222: ["water", 10, 200],
-            223: ["soda", 20, 150],
-            224: ["ketchup", 35, 60],
-            225: ["mayonnaise", 45, 40],
-            226: ["cornflakes", 60, 55],
-            227: ["oats", 50, 65],
-            228: ["pasta", 40, 90],
-            229: ["tomato", 25, 100],
-            230: ["potato", 20, 120],
-            231: ["onion", 18, 110],
-            232: ["carrot", 22, 100],
-            233: ["apple", 60, 80],
-            234: ["banana", 30, 95],
-            235: ["grapes", 55, 85],
-            236: ["orange", 50, 75],
-            237: ["lemon", 15, 150],
-            238: ["chicken", 150, 40],
-            239: ["mutton", 300, 20],
-            240: ["fish", 200, 35],
-            241: ["paneer", 90, 60],
-            242: ["curd", 35, 100],
-            243: ["icecream", 60, 70],
-            244: ["buttermilk", 20, 90],
-            245: ["pickles", 40, 50],
-            246: ["jam", 55, 45],
-            247: ["honey", 80, 40],
-            248: ["coconut oil", 120, 30],
-            249: ["ghee", 150, 25],
-            250: ["turmeric", 35, 75]
-        }
+import os
+class customer(inventory):
+    def __init__(self):
+        super().__init__()
+        self.name = input("Enter your name : ")
+        self.age = int(input("Enter your age : "))
+        self.phone = int(input("Enter your phone : "))
 
-for i in items:
-    print(f"Product Name:{items[i][0]}\nProduct Price:{items[i][1]}\nProduct Quantity:{items[i][2]}")
-    print("------------------------------------")
+        self.buy_product()
+
+        # Only write the header if file does not exist
+        file_path = "Customers_Data.csv"
+        write_header = not os.path.exists(file_path)
+
+        with open(file_path, "a") as f:
+            if write_header:
+                f.write("Name,Age,Phone_num,Total_price,Total_profit\n")
+            f.write(f"{self.name},{self.age},{self.phone},{self.summ},{self.summ * 0.25}\n")
+
+
