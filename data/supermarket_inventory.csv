@@ -1,0 +1,301 @@
+product_id,product_name,product_price,product_stock,product_category
+1,Croissant,21.05,263,Bakery
+2,Muffin,37.0,147,Bakery
+3,Cake,20.2,164,Bakery
+4,Cola,35.65,76,Beverages
+5,Whipped Cream,34.69,64,Dairy
+6,Cheddar Cheese,18.37,330,Dairy
+7,Chips,49.21,367,Snacks
+8,Sour Cream,6.67,435,Dairy
+9,Muffin,47.56,293,Bakery
+10,Milk,5.45,183,Beverages
+11,Blueberry,2.55,280,Fruits
+12,Iced Tea,26.92,257,Beverages
+13,Whipped Cream,45.44,64,Dairy
+14,Sour Cream,46.09,412,Dairy
+15,Chips,24.15,272,Snacks
+16,Energy Drink,29.17,495,Beverages
+17,Strawberry,34.03,125,Fruits
+18,Mango,7.79,468,Fruits
+19,Cake,20.31,201,Bakery
+20,Nuts,17.47,328,Snacks
+21,Granola Bar,1.15,403,Snacks
+22,Tea,45.34,401,Beverages
+23,Bagel,49.42,287,Bakery
+24,Grapes,42.28,58,Fruits
+25,Cheddar Cheese,30.62,255,Dairy
+26,Peach,11.45,347,Fruits
+27,Custard,41.88,287,Dairy
+28,Lettuce,24.78,66,Vegetables
+29,Strawberry,12.19,16,Fruits
+30,Crackers,15.97,370,Snacks
+31,Peach,20.67,447,Fruits
+32,Pie,27.5,91,Bakery
+33,Milk,16.14,2,Beverages
+34,Banana,41.1,389,Fruits
+35,Donut,4.18,240,Bakery
+36,Popcorn,24.99,219,Snacks
+37,Carrot,4.39,262,Vegetables
+38,Popcorn,12.02,345,Snacks
+39,Yogurt,13.02,284,Dairy
+40,Mango,40.89,276,Fruits
+41,Spinach,36.68,213,Vegetables
+42,Lemonade,14.33,130,Beverages
+43,Banana,10.48,395,Fruits
+44,Carrot,47.05,440,Vegetables
+45,Energy Drink,16.59,31,Beverages
+46,Sour Cream,1.01,372,Dairy
+47,Apple,29.83,62,Fruits
+48,Pretzels,14.67,105,Snacks
+49,Banana,28.26,289,Fruits
+50,Orange Juice,26.01,8,Beverages
+51,Trail Mix,26.99,242,Snacks
+52,Milkshake,41.07,357,Dairy
+53,Donut,35.82,46,Bakery
+54,Tomato,40.81,404,Vegetables
+55,Trail Mix,43.58,342,Snacks
+56,Sour Cream,49.76,62,Dairy
+57,Apple Juice,10.11,431,Beverages
+58,Mango,26.93,478,Fruits
+59,Iced Tea,24.51,500,Beverages
+60,Watermelon,29.73,136,Fruits
+61,Muffin,18.58,18,Bakery
+62,Baguette,20.03,4,Bakery
+63,Grapes,47.4,142,Fruits
+64,Cake,12.31,109,Bakery
+65,Trail Mix,33.2,108,Snacks
+66,Strawberry,32.87,210,Fruits
+67,Cookies,24.4,195,Snacks
+68,Cookies,26.03,29,Snacks
+69,Trail Mix,18.63,495,Snacks
+70,Custard,49.07,409,Dairy
+71,Whole Wheat Bread,22.49,413,Bakery
+72,Popcorn,34.67,267,Snacks
+73,Tea,2.78,448,Beverages
+74,Broccoli,28.68,280,Vegetables
+75,Apple Juice,37.98,116,Beverages
+76,Onion,33.37,326,Vegetables
+77,Donut,31.97,338,Bakery
+78,Mozzarella Cheese,42.02,353,Dairy
+79,Cheddar Cheese,20.43,37,Dairy
+80,Strawberry,34.96,277,Fruits
+81,Lemonade,17.82,482,Beverages
+82,Cookies,49.93,209,Snacks
+83,Peach,43.69,474,Fruits
+84,Mineral Water,38.53,155,Beverages
+85,Tomato,9.62,493,Vegetables
+86,Cupcake,9.33,21,Bakery
+87,Nuts,2.91,269,Snacks
+88,Pretzels,47.51,267,Snacks
+89,Sour Cream,9.78,470,Dairy
+90,Trail Mix,39.35,39,Snacks
+91,Granola Bar,38.05,325,Snacks
+92,White Bread,0.76,456,Bakery
+93,Lemonade,27.15,107,Beverages
+94,Crackers,39.07,15,Snacks
+95,Pretzels,14.06,118,Snacks
+96,Ice Cream,8.67,479,Dairy
+97,Whipped Cream,13.5,349,Dairy
+98,Cheddar Cheese,43.65,174,Dairy
+99,Apple,25.19,461,Fruits
+100,Spinach,13.26,80,Vegetables
+101,Onion,31.92,37,Vegetables
+102,Baguette,47.26,478,Bakery
+103,Pineapple,2.75,11,Fruits
+104,Chips,26.32,250,Snacks
+105,Chips,13.99,398,Snacks
+106,Tea,26.27,177,Beverages
+107,Cupcake,46.96,185,Bakery
+108,Watermelon,42.95,217,Fruits
+109,Onion,49.95,500,Vegetables
+110,Peach,11.73,76,Fruits
+111,Strawberry,44.31,86,Fruits
+112,Garlic,48.68,440,Vegetables
+113,Sour Cream,8.89,354,Dairy
+114,Potato,14.86,443,Vegetables
+115,Pineapple,24.8,150,Fruits
+116,Watermelon,16.27,188,Fruits
+117,Strawberry,13.1,25,Fruits
+118,Mango,4.22,114,Fruits
+119,Whole Wheat Bread,34.08,493,Bakery
+120,Cucumber,38.55,385,Vegetables
+121,Chocolate Bar,29.87,104,Snacks
+122,Strawberry,20.66,257,Fruits
+123,Baguette,38.23,334,Bakery
+124,Potato,6.57,428,Vegetables
+125,Baguette,18.49,399,Bakery
+126,Tomato,37.34,61,Vegetables
+127,White Bread,3.18,471,Bakery
+128,Cola,33.69,454,Beverages
+129,Iced Tea,5.27,482,Beverages
+130,Blueberry,41.19,327,Fruits
+131,Milk,49.86,296,Beverages
+132,White Bread,45.14,262,Bakery
+133,Trail Mix,35.99,203,Snacks
+134,Cream Cheese,21.04,476,Dairy
+135,Cream Cheese,34.9,173,Dairy
+136,Croissant,16.93,296,Bakery
+137,Ice Cream,30.76,447,Dairy
+138,Iced Tea,5.65,320,Beverages
+139,Pretzels,22.92,273,Snacks
+140,Chips,27.56,277,Snacks
+141,Cream Cheese,43.37,92,Dairy
+142,Yogurt,27.49,359,Dairy
+143,Muffin,41.18,177,Bakery
+144,Mango,25.78,165,Fruits
+145,Iced Tea,35.67,270,Beverages
+146,Muffin,23.4,348,Bakery
+147,Whole Wheat Bread,7.85,3,Bakery
+148,Mineral Water,34.49,87,Beverages
+149,Pie,10.51,41,Bakery
+150,Garlic,31.68,143,Vegetables
+151,Cola,34.64,397,Beverages
+152,Blueberry,27.82,68,Fruits
+153,Mineral Water,15.84,195,Beverages
+154,Cupcake,17.66,406,Bakery
+155,Onion,9.25,317,Vegetables
+156,Donut,27.84,37,Bakery
+157,Pretzels,12.02,331,Snacks
+158,Mineral Water,32.02,142,Beverages
+159,Cake,39.16,499,Bakery
+160,Onion,42.33,216,Vegetables
+161,Cucumber,16.73,400,Vegetables
+162,Ice Cream,23.21,287,Dairy
+163,Mango,3.04,472,Fruits
+164,Cucumber,32.5,277,Vegetables
+165,Pretzels,0.9,422,Snacks
+166,Grapes,1.5,242,Fruits
+167,Mango,38.58,465,Fruits
+168,Orange Juice,11.67,125,Beverages
+169,Peach,32.59,168,Fruits
+170,Whole Wheat Bread,39.57,181,Bakery
+171,Onion,36.45,417,Vegetables
+172,Sour Cream,19.91,264,Dairy
+173,Potato,17.31,81,Vegetables
+174,Cake,27.9,65,Bakery
+175,Cucumber,43.51,243,Vegetables
+176,Whipped Cream,18.21,196,Dairy
+177,Candy,2.35,254,Snacks
+178,Blueberry,11.23,370,Fruits
+179,Mango,42.98,473,Fruits
+180,Cupcake,4.88,20,Bakery
+181,Whole Wheat Bread,12.1,194,Bakery
+182,Carrot,14.13,18,Vegetables
+183,Cupcake,31.31,422,Bakery
+184,Whipped Cream,32.7,111,Dairy
+185,Sour Cream,14.26,491,Dairy
+186,Potato,13.3,111,Vegetables
+187,Cookies,36.44,216,Snacks
+188,Orange,37.62,499,Fruits
+189,Apple,9.64,52,Fruits
+190,Iced Tea,28.38,160,Beverages
+191,Whole Wheat Bread,40.17,305,Bakery
+192,Bagel,47.89,436,Bakery
+193,Popcorn,37.46,117,Snacks
+194,Ice Cream,30.02,186,Dairy
+195,Cucumber,39.2,109,Vegetables
+196,Banana,41.64,10,Fruits
+197,Milkshake,4.7,303,Dairy
+198,Sour Cream,49.01,441,Dairy
+199,Iced Tea,31.64,30,Beverages
+200,Bagel,32.5,132,Bakery
+201,Orange,0.68,176,Fruits
+202,Baguette,32.21,375,Bakery
+203,Lemonade,49.09,499,Beverages
+204,Orange,6.2,350,Fruits
+205,White Bread,17.85,311,Bakery
+206,Cookies,46.69,102,Snacks
+207,Milkshake,49.7,327,Dairy
+208,Blueberry,41.73,240,Fruits
+209,Whole Wheat Bread,30.02,382,Bakery
+210,Energy Drink,42.16,165,Beverages
+211,Whipped Cream,6.57,379,Dairy
+212,Banana,8.14,402,Fruits
+213,Mango,3.93,231,Fruits
+214,Muffin,1.92,318,Bakery
+215,Candy,14.61,135,Snacks
+216,Cake,11.78,424,Bakery
+217,Tomato,34.87,455,Vegetables
+218,Baguette,18.44,152,Bakery
+219,Onion,2.89,148,Vegetables
+220,Spinach,28.14,233,Vegetables
+221,Cake,29.1,3,Bakery
+222,Candy,12.94,301,Snacks
+223,Orange Juice,20.25,246,Beverages
+224,Broccoli,31.51,65,Vegetables
+225,Yogurt,2.7,317,Dairy
+226,Whipped Cream,6.64,407,Dairy
+227,Orange,16.09,126,Fruits
+228,Nuts,22.38,270,Snacks
+229,Milkshake,1.59,420,Dairy
+230,Pretzels,31.21,144,Snacks
+231,Croissant,30.41,257,Bakery
+232,Trail Mix,17.64,406,Snacks
+233,Bagel,16.43,466,Bakery
+234,Whipped Cream,7.99,121,Dairy
+235,Onion,32.25,262,Vegetables
+236,Banana,23.52,189,Fruits
+237,Pie,48.77,189,Bakery
+238,Spinach,25.8,91,Vegetables
+239,Donut,33.21,486,Bakery
+240,Cake,15.21,421,Bakery
+241,Whipped Cream,22.79,296,Dairy
+242,Yogurt,42.99,216,Dairy
+243,Bagel,2.8,455,Bakery
+244,Pie,27.57,189,Bakery
+245,Cabbage,48.88,364,Vegetables
+246,Blueberry,30.08,40,Fruits
+247,Baguette,2.84,35,Bakery
+248,Cabbage,16.63,212,Vegetables
+249,Candy,10.45,263,Snacks
+250,Broccoli,27.27,328,Vegetables
+251,Orange,15.13,453,Fruits
+252,Muffin,13.59,232,Bakery
+253,Croissant,21.89,5,Bakery
+254,Ice Cream,8.92,461,Dairy
+255,Muffin,18.09,438,Bakery
+256,Orange,43.41,187,Fruits
+257,Apple Juice,45.72,478,Beverages
+258,Crackers,6.45,44,Snacks
+259,White Bread,43.54,252,Bakery
+260,Banana,15.18,460,Fruits
+261,Nuts,11.02,214,Snacks
+262,Croissant,38.2,60,Bakery
+263,Tea,17.25,91,Beverages
+264,Baguette,30.42,368,Bakery
+265,Watermelon,13.38,168,Fruits
+266,Tea,24.66,110,Beverages
+267,Milk,3.25,119,Beverages
+268,Pie,16.31,474,Bakery
+269,Trail Mix,2.81,40,Snacks
+270,Donut,26.85,279,Bakery
+271,Peach,11.87,237,Fruits
+272,Whole Wheat Bread,29.49,359,Bakery
+273,Muffin,26.68,369,Bakery
+274,Cream Cheese,22.58,93,Dairy
+275,Broccoli,27.97,217,Vegetables
+276,Ice Cream,28.19,244,Dairy
+277,Iced Tea,8.24,351,Beverages
+278,Muffin,8.7,419,Bakery
+279,Whole Wheat Bread,24.56,145,Bakery
+280,Cupcake,48.01,246,Bakery
+281,Chocolate Bar,47.31,475,Snacks
+282,Chocolate Bar,21.1,310,Snacks
+283,Croissant,22.97,156,Bakery
+284,Cola,26.41,424,Beverages
+285,Popcorn,37.33,462,Snacks
+286,Milk,10.27,454,Beverages
+287,Cream Cheese,44.35,71,Dairy
+288,Sour Cream,1.23,207,Dairy
+289,Whipped Cream,24.11,451,Dairy
+290,Croissant,15.36,194,Bakery
+291,Lemonade,15.96,385,Beverages
+292,Donut,49.2,296,Bakery
+293,Apple Juice,9.4,393,Beverages
+294,Whole Wheat Bread,19.78,183,Bakery
+295,Onion,24.89,396,Vegetables
+296,Whole Wheat Bread,15.64,129,Bakery
+297,Cupcake,28.4,151,Bakery
+298,Croissant,6.92,281,Bakery
+299,Tomato,40.33,463,Vegetables
+300,Whipped Cream,7.01,162,Dairy
