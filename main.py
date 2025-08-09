@@ -67,7 +67,7 @@ def customer_interface(stock):
     except ValueError:
         print("❌ Invalid input. Please enter numeric values.")
 
-def owner_interface(stock):
+def owner_interface(stock,sheet):
     while True:
         print("\n👨‍💼 Owner Menu:")
         print("1. Show all product details")
@@ -82,15 +82,13 @@ def owner_interface(stock):
         elif choice == "2":
             stock.show_total_profit()
         elif choice == "3":
-            stock.monthly_sheet.show_monthly_data()
+            sheet.show_monthly_data()
         elif choice == "4":
             break
         else:
             print("❌ Invalid choice. Try again.")
 
 def save_multiple_purchases_to_csv(customer, purchase_list, filename="purchases.csv"):
-    import csv
-    import os
     file_exists = os.path.isfile(filename)
 
     with open(filename, mode='a', newline='') as file:
@@ -132,7 +130,7 @@ def main():
         if choice == "1":
             customer_interface(stock)
         elif choice == "2":
-            owner_interface(stock)
+            owner_interface(stock,sheet)
         elif choice == "3":
             print("👋 Exiting the system. Goodbye!")
             break
