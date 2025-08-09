@@ -1,17 +1,8 @@
-class ProductCls:
-    def __init__(self, id, name, price, quantity):
-        self.id = id
-        self.name = name
-        self.price = price
-        self.quantity = quantity
-
-    def showProduct(self):
-        print(f"ID: {self.id}, Name: {self.name}, Price: {self.price}, Quantity: {self.quantity}")
-
+from product import ProductCls
 
 class inventoryCls:
-    def __init__(self, products):
-        self.products = products
+    def __init__(self):
+        self.products = []
         self.readFromFile()
 
 
@@ -42,31 +33,37 @@ class inventoryCls:
 
     def addProduct(self, product):
         for existing_product in self.products:
-            if existing_product.id == product.id:
+            if str(existing_product.id) == str(product.id):
                 print(f"Product with ID {product.id} already exists.")
                 return
         self.products.append(product)
         with open("inventory.csv", "a") as f:
             f.write(f"{product.id},{product.name},{product.price},{product.price * 0.25},{product.quantity}\n")
+            print(f"Product {product.name} added successfully.")
 
     def removeProduct(self, productId):
         for product in self.products:
-            if product.id == productId:
+            if str(product.id) == str(productId):
                 self.products.remove(product)
                 break
         else:
             print(f"Product with ID {productId} not found.")
             return
+        with open("inventory.csv", "r") as f:
+            lines = f.readlines()
         with open("inventory.csv", "a") as f:
-            for line in f.readlines()[1:]:
+            for line in lines:
                 if line.split(",")[0] == str(productId):
-                    f.remove(line)
+                    # remove row
+                    lines.remove(line)
                     break
-
+        with open("inventory.csv", "w") as f:
+            f.writelines(lines)
+        print(f"Product with ID {productId} removed successfully.")
 
     def updateProduct(self, productId, updatedProduct):
         for product in self.products:
-            if product.id == productId:
+            if str(product.id) == str(productId):
                 product.name = updatedProduct.name
                 product.price = updatedProduct.price
                 product.quantity = updatedProduct.quantity
@@ -74,9 +71,28 @@ class inventoryCls:
         else:
             print(f"Product with ID {productId} not found.")
             return
-        with open("inventory.csv", "a") as f:
-            for line in f.readlines()[1:]:
+        with open("inventory.csv", "r") as f:
+            lines = f.readlines()
+
+        with open("inventory.csv", "w") as f:
+            for line in lines:
                 if line.split(",")[0] == str(productId):
-                    f.remove(line)
+                    lines.remove(line)
                     break
+            f.writelines(lines)
             f.write(f"{updatedProduct.id},{updatedProduct.name},{updatedProduct.price},{updatedProduct.price * 0.25},{updatedProduct.quantity}\n")
+        print(f"Product with ID {productId} updated successfully.")
+
+    def buyProduct(self, productId, quan):
+        for product in self.products:
+            if str(product.id) == str(productId):
+                price = product.buyProduct(quan)
+                if price is not None:
+                    print(f"Total cost for {quan} of {product.name}: {price}")
+                    
+                    # product.quantity -= int(quan/2)
+                    self.updateProduct(productId, product)
+                    return price
+                break
+        else:
+            print(f"Product with ID {productId} not found.")

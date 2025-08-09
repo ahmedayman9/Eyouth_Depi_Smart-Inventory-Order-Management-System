@@ -1,12 +1,10 @@
 ID,Name,Price,Profit,Quantity
-1,Apple,0.5,0.2,100
-2,Banana,0.3,0.1,150
 3,Milk,1.2,0.5,80
-4,Bread,1.0,0.4,60
 5,Eggs,2.5,1.0,40
 6,Cheese,3.0,1.2,30
 7,Chicken,5.0,2.0,25
-8,Rice,0.8,0.3,90
 9,Tomato,0.6,0.2,120
 10,Potato,0.4,0.15,110
 11,Doodad,20.0,5.0,150
+1,Apple,0.5,0.125,0
+2,Banana,0.3,0.075,43
