@@ -1,4 +1,5 @@
 import csv
+import os
 class customer:
     def __init__(self, Name , Age , PhoneNumber , ID , Product_ID , Price , Profit):
         self.Name = Name
@@ -13,19 +14,24 @@ class customer:
         self.allcustomerslist = []
 
 
-    def createfile(self):
-        with open("CustomerData.csv","",newline="") as f:
-            self.writer = csv.DictWriter(f, fieldnames = self.customerlisthead)
-            self.writer.writeheader()
-
-    def Addcustomer(self):
+    def AddCustomer(self):
+        file_exists = os.path.isfile("CustomerData.csv")
         with open("CustomerData.csv","a",newline="") as f:
+            writer = csv.DictWriter(f, fieldnames = self.customerlisthead)
+            if not file_exists:
+                writer.writeheader()
 
-            self.writer.writerow({
-                self.customerlisthead[0]:self.customerlist[0], self.customerlisthead[1]:self.customerlist[1] ,self.customerlisthead[2]:self.customerlist[2],
-                self.customerlisthead[3]: self.customerlist[3] ,self.customerlisthead[4]:self.customerlist[4] , self.customerlisthead[5]:self.customerlist[5],
+            writer.writerow({
+                self.customerlisthead[0]: self.customerlist[0], self.customerlisthead[1]: self.customerlist[1],
+                self.customerlisthead[2]: self.customerlist[2],
+                self.customerlisthead[3]: self.customerlist[3], self.customerlisthead[4]: self.customerlist[4],
+                self.customerlisthead[5]: self.customerlist[5],
                 self.customerlisthead[6]: self.customerlist[6]
             })
+
+
+
+
 
 
 
