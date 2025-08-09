@@ -55,3 +55,15 @@ class Inventory:
             if product['no_of_items'] > 0:
                 print(product)
 
+    def price_of_item(self, name_product):
+        for i in products:
+            if i['productName'].lower() == name_product.lower():
+                return i['price']
+        return None
+    
+
+    def profit_of_item(self, name_product):
+      for i in products:
+          if i['productName'].lower() == name_product.lower():
+              return i['netprofit']
+      return None
