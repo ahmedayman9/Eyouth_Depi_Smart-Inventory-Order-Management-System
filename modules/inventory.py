@@ -96,8 +96,8 @@ class Inventory:
                 writer.writerows(updated_rows)
 
 
-inv = Inventory()
-# inv.show_products()
-# inv.add_item()
-# inv.show_total_profit()
-inv.update_item("Cake", 4)
+# inv = Inventory()
+# # inv.show_products()
+# # inv.add_item()
+# # inv.show_total_profit()
+# inv.update_item("Cake", 4)
