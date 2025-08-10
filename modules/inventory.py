@@ -1,6 +1,6 @@
+from modules.cli_colors import COLORS
 import os
 import csv
-
 
 # make file path works on all platforms (linux, windows, macos)
 curr_dir = os.path.dirname(os.path.abspath(__file__))
@@ -67,12 +67,14 @@ class Inventory:
 
     def update_item(
         self,
-        item_name,
+        item_id,
         quantity,
         file_name=inventory_file_name,
     ):
         updated_rows = []
         item_found = False
+        done = False
+        bought_id = None
         with open(file_name, "r", newline="") as file:
             reader = csv.reader(file)
             header = next(reader)
@@ -80,13 +82,15 @@ class Inventory:
             for row in reader:
                 if not row:
                     continue
-                if row[1] == item_name and not item_found:
+                if row[0] == item_id and not item_found:
                     if int(row[3]) >= quantity:
                         row[3] = str(int(row[3]) - quantity)
-                        print(
-                            f"{quantity} {item_name} removed successfully from the inventory and the current stock is {row[3]}"
-                        )
+                        # print(
+                        #     f"{quantity} {item_name} removed successfully from the inventory and the current stock is {row[3]}"
+                        # )
                         item_found = True
+                        done = True
+                        bought_id = row[0]
                     else:
                         print(f"Sorry, we only have {row[3]} in stock.")
                 updated_rows.append(row)
@@ -94,10 +98,19 @@ class Inventory:
             with open(file_name, "w", newline="") as file:
                 writer = csv.writer(file)
                 writer.writerows(updated_rows)
+        if not item_found:
+            print(
+                f"{COLORS.RED}Sorry we don't have this product right now!{COLORS.RESET}"
+            )
+        return done, bought_id
 
-
-# inv = Inventory()
-# # inv.show_products()
-# # inv.add_item()
-# # inv.show_total_profit()
-# inv.update_item("Cake", 4)
+    def get_product_price(self, product_id, file_name=inventory_file_name):
+        with open(file_name, "r", newline="") as file:
+            reader = csv.reader(file)
+            next(reader)  # Skip header
+            for row in reader:
+                if not row:
+                    continue
+                if row[0] == str(product_id):
+                    return float(row[2])
+        return 0.0
