@@ -1,77 +1,98 @@
 import os
 import csv
 
+
 class Inventory:
     # def __init__(self):
     #     self.inventory = {}
+    inventory_file_name = r"./data/supermarket_inventory.csv"
 
-    def show_products(self,file_name=r"C:\Users\DEBI\Desktop\shop_system\Eyouth_Depi_Smart-Inventory-Order-Management-System\data\supermarket_inventory.csv"):
-        with open(file_name, 'r', newline='') as file:
+    def show_products(
+        self,
+        file_name=inventory_file_name,
+    ):
+        with open(file_name, "r", newline="") as file:
             reader = csv.reader(file)
             print("\nproducts available in inventory are:")
             next(reader)
             for row in reader:
-                print(f"product id:{row[0]}, product:{row[1]}, price:{row[2]},  stock:{row[3]} ,categoty:{row[4]}")
+                print(
+                    f"product id:{row[0]}, product:{row[1]}, price:{row[2]},  stock:{row[3]} ,categoty:{row[4]}"
+                )
 
-    def add_item(self, file_name=r"C:\Users\DEBI\Desktop\shop_system\Eyouth_Depi_Smart-Inventory-Order-Management-System\data\supermarket_inventory.csv"):
-        with open(file_name, 'r', newline='') as file:
+    def add_item(
+        self,
+        file_name=inventory_file_name,
+    ):
+        with open(file_name, "r", newline="") as file:
             reader = csv.reader(file)
             next(reader)
-            last_id=0
+            last_id = 0
             for row in reader:
-                last_id=int(row[0])
+                last_id = int(row[0])
 
-            new_id=last_id+1
-            product_name=input("enter product name:")
-            product_price=input("enter product price:")
-            product_stock=input("enter product stock:")
-            product_category=input("enter product category:")
+            new_id = last_id + 1
+            product_name = input("enter product name:")
+            product_price = input("enter product price:")
+            product_stock = input("enter product stock:")
+            product_category = input("enter product category:")
 
-        with open(file_name, 'a', newline='') as file:
+        with open(file_name, "a", newline="") as file:
             writer = csv.writer(file)
-            writer.writerow([new_id, product_name, product_price, product_stock, product_category])
+            writer.writerow(
+                [new_id, product_name, product_price, product_stock, product_category]
+            )
             print("/nproduct added successfully to the inventory ...")
 
-    
-    def show_total_profit(self,file_name=r"C:\Users\DEBI\Desktop\shop_system\Eyouth_Depi_Smart-Inventory-Order-Management-System\data\supermarket_inventory.csv"):
-        with open(file_name, 'r', newline='') as file:
+    def show_total_profit(
+        self,
+        file_name=inventory_file_name,
+    ):
+        with open(file_name, "r", newline="") as file:
             reader = csv.reader(file)
             next(reader)
-            total_profit=0
+            total_profit = 0
             for row in reader:
-                product_price=float(row[2])
-                product_stock=int(row[3])
-                total_profit+=(product_price*product_stock)
+                product_price = float(row[2])
+                product_stock = int(row[3])
+                total_profit += product_price * product_stock
 
-            total_profit *= .25
+            total_profit *= 0.25
             print(f"your total profit in  25 percentage is:{total_profit}")
 
-
-    def remove_item(self, item_name,quantity, file_name=r"C:\Users\DEBI\Desktop\shop_system\Eyouth_Depi_Smart-Inventory-Order-Management-System\data\supermarket_inventory.csv"):
-        updated_rows=[]
-        with open(file_name, 'r', newline='') as file:
+    def update_item(
+        self,
+        item_name,
+        quantity,
+        file_name=inventory_file_name,
+    ):
+        updated_rows = []
+        item_found = False
+        with open(file_name, "r", newline="") as file:
             reader = csv.reader(file)
-            next(reader)
-            updated_rows.append(["product_id","product_name","product_price","product_stock","product_category"])
+            header = next(reader)
+            updated_rows.append(header)
             for row in reader:
-                if row[1] == item_name:
+                if not row:
+                    continue
+                if row[1] == item_name and not item_found:
                     if int(row[3]) >= quantity:
                         row[3] = str(int(row[3]) - quantity)
-                        print(f"{quantity} {item_name} removed successfully from the inventory and the current stock is {row[3]}")
-                        updated_rows.append(row)
-                        break
+                        print(
+                            f"{quantity} {item_name} removed successfully from the inventory and the current stock is {row[3]}"
+                        )
+                        item_found = True
                     else:
                         print(f"Sorry, we only have {row[3]} in stock.")
                 updated_rows.append(row)
-        if(updated_rows[1]):
-            with open(file_name, 'w', newline='') as file:
+        if updated_rows[1]:
+            with open(file_name, "w", newline="") as file:
                 writer = csv.writer(file)
                 writer.writerows(updated_rows)
-    
 
 
-inv=Inventory()
+inv = Inventory()
 # inv.show_products()
 # inv.add_item()
 # inv.show_total_profit()
-inv.remove_item("meet",10)
+inv.update_item("Cake", 4)
