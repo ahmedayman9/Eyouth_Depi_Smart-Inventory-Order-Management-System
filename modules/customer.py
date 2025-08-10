@@ -1,10 +1,15 @@
 import csv
 import os
 
-file_name = r"./data/customers.csv"
+
+# make file path works on all platforms (linux, windows, macos)
+curr_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(curr_dir)
+file_name = os.path.join(project_root, "data", "customers.csv")
 
 
 class Customer:
+    # def __init__(self):
     curr_id = None
 
     def login(self, id, password):

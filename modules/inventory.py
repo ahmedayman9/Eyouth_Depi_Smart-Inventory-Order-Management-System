@@ -2,10 +2,15 @@ import os
 import csv
 
 
+# make file path works on all platforms (linux, windows, macos)
+curr_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(curr_dir)
+inventory_file_name = os.path.join(project_root, "data", "supermarket_inventory.csv")
+
+
 class Inventory:
     # def __init__(self):
     #     self.inventory = {}
-    inventory_file_name = r"./data/supermarket_inventory.csv"
 
     def show_products(
         self,
