@@ -45,6 +45,9 @@ if __name__ == "__main__":
             elif choice == 5:
                 user.view_users()
             elif choice == 6:
+                ch = user.balance.show_menu()
+                user.balance.show_sales(ch)
+            elif choice == 7:
                 break
         else:
             if choice == 1:

@@ -7,6 +7,8 @@ curr_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(curr_dir)
 inventory_file_name = os.path.join(project_root, "data", "supermarket_inventory.csv")
 
+line_sep = str(f"####" + f"{COLORS.GREEN}-{COLORS.RESET}" * 40 + "####")
+
 
 class Inventory:
     # def __init__(self):
@@ -47,7 +49,9 @@ class Inventory:
             writer.writerow(
                 [new_id, product_name, product_price, product_stock, product_category]
             )
-            print("/nproduct added successfully to the inventory ...")
+            print(line_sep)
+            print("product added successfully to the inventory ...")
+            print(line_sep)
 
     def show_total_profit(
         self,
@@ -63,7 +67,8 @@ class Inventory:
                 total_profit += product_price * product_stock
 
             total_profit *= 0.25
-            print(f"your total profit in  25 percentage is:{total_profit}")
+            print(f"your total profit in 25% is:{total_profit}")
+            print(line_sep + "\n")
 
     def update_item(
         self,

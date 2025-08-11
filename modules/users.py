@@ -111,14 +111,15 @@ class AdminUser(Customer):
         self.balance = Balance()
 
     def show_menu(self):
-        print(f"{COLORS.GREEN}Admin Menu:{COLORS.RESET}")
+        print(f"{COLORS.GREEN}-0-0-0-0 Admin Menu -0-0-0-{COLORS.RESET}")
         print("1. Show All Products")
         print("2. Add New Product")
         print("3. Update Product")
         print("4. Show Inventory Total Profit")
         print("5. View All Users")
-
-        print("6. Logout")
+        print("6. Balance Sheet.")
+        print("7. Logout")
+        print(line_sep)
 
     def add_product(self):
         self.inventory.add_item()

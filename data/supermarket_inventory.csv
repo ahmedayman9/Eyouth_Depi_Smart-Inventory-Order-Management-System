@@ -67,7 +67,7 @@ product_id,298,product_price,product_stock,product_category
 67,Trail Mix,18.63,495,Snacks
 68,Custard,49.07,409,Dairy
 69,Whole Wheat Bread,22.49,413,Bakery
-70,Popcorn,34.67,267,Snacks
+70,Popcorn,34.67,260,Snacks
 71,Tea,2.78,448,Beverages
 72,Broccoli,28.68,280,Vegetables
 73,Apple Juice,37.98,116,Beverages
@@ -87,7 +87,7 @@ product_id,298,product_price,product_stock,product_category
 87,Sour Cream,9.78,470,Dairy
 88,Trail Mix,39.35,39,Snacks
 89,Granola Bar,38.05,325,Snacks
-90,White Bread,0.76,456,Bakery
+90,White Bread,0.76,450,Bakery
 91,Lemonade,27.15,107,Beverages
 92,Crackers,39.07,15,Snacks
 93,Pretzels,14.06,118,Snacks
