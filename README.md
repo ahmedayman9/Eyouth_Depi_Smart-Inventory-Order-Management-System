@@ -1,6 +1,6 @@
 # 📌 Smart Inventory & Order Management System
 
-A **Python-based** application to help small businesses **track inventory**, **manage customer orders**, and **generate reports** — with room to add **AI-powered demand prediction** later.
+A **Python-based** application to help small businesses **track inventory**, **manage customer orders**, and **generate reports**.
 
 <p align="left">
   <a href="https://www.python.org/downloads/"><img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-blue.svg"></a>
